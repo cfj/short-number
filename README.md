@@ -1,6 +1,6 @@
 # short-number [![Build Status](https://travis-ci.org/cfj/short-number.svg?branch=master)](https://travis-ci.org/cfj/short-number)
 
-> Turn a long number into a short one for readability.
+> Turn a long number into a short one for easier reading.
 
 
 ## Installation
