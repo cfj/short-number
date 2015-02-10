@@ -1,4 +1,4 @@
-# short-number [![Build Status](https://travis-ci.org/cfj/short-number.svg?branch=master)](https://travis-ci.org/cfj/short-number)
+# short-number [![Build Status](https://travis-ci.org/cfj/short-number.svg?branch=master)](https://travis-ci.org/cfj/short-number) [![npm version](https://badge.fury.io/js/short-number.svg)](http://badge.fury.io/js/short-number)
 
 > Turn a long number into a short one for easier reading.
 
