@@ -1,0 +1,30 @@
+{
+  "name": "short-number",
+  "version": "1.0.0",
+  "description": "Turn a long number into a short one for easier reading, like 23634 => 23.6K",
+  "moduleType": ["globals", "amd", "node"],
+  "license": "MIT",
+  "authors": [{
+    "name": "Jonathan Svärdén",
+    "email": "jonathan.svarden@gmail.com",
+    "homepage": "http://svarden.se"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfj/short-number"
+  },
+  "keywords": [
+    "number",
+    "shorten",
+    "simplify",
+    "readability",
+    "thousands",
+    "millions"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "package.json",
+    "test.js"
+  ]
+}
