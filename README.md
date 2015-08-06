@@ -8,6 +8,10 @@
 ```sh
 $ npm install --save short-number
 ```
+Or with bower:
+```sh
+$ bower install short-number
+```
 
 
 ## Usage
