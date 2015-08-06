@@ -1,7 +1,7 @@
 {
   "name": "short-number",
   "version": "1.0.0",
-  "description": "Turn a long number into a short one for easier reading, like 23634 => 23.6K",
+  "description": "Turn a long number into a short one to improve readability, like 23634 => 23.6K",
   "repository": {
       "type": "git",
       "url": "https://github.com/cfj/short-number"
