@@ -13,3 +13,23 @@ test('positive tests', function(t) {
     t.equal(shortNumber(984938293), '984.9M');
     t.equal(shortNumber(2743000000), '2.7B');
 });
+
+test('throw error on too large numbers', function(t) {
+    t.plan(1);
+
+    t.throws(function() {
+        shortNumber(1e20);
+    }, RangeError, 'Input expected to be < 1e19');
+});
+
+test('throw error on incorrect type', function(t) {
+    t.plan(2);
+
+    t.throws(function() {
+        shortNumber('abc');
+    }, TypeError, 'Expected a number');
+
+    t.throws(function() {
+        shortNumber(true);
+    }, TypeError, 'Expected a number');
+});
