@@ -10,6 +10,10 @@
             throw new TypeError('Expected a number');
         }
 
+        if(num > 1e19) {
+            throw new RangeError('Input expected to be < 1e19');
+        }
+
         var shortNumber;
         var exponent;
         var suffixes = ['K', 'M', 'B', 'T'];
