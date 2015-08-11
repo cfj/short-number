@@ -14,18 +14,17 @@
             throw new RangeError('Input expected to be < 1e19');
         }
 
+        if(num < 1000) {
+            return num;
+        }
+
         var shortNumber;
         var exponent;
         var suffixes = ['K', 'M', 'B', 'T'];
         var size = (num + '').length;
 
         exponent = size % 3 === 0 ? size - 3 : size - (size % 3);
-
-        if(num < 1000) {
-            return num;
-        } else {
-            shortNumber = Math.round(10 * (num / Math.pow(10, exponent))) / 10;
-        }
+        shortNumber = Math.round(10 * (num / Math.pow(10, exponent))) / 10;
 
         if(exponent < 6) {
             shortNumber += suffixes[0];
