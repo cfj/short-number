@@ -22,8 +22,12 @@
             return num;
         }
 
-        if (Math.abs(num) == 1000) {
+        if (num == 1000) {
             return 1 + 'K';
+        }
+
+        if (num == -1000) {
+            return -1 + 'K';
         } 
 
         var shortNumber;
