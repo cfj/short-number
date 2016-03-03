@@ -22,6 +22,14 @@
             return num;
         }
 
+        if (num == 1000) {
+            return 1 + 'K';
+        }
+
+        if (num == -1000) {
+            return -1 + 'K';
+        } 
+
         var shortNumber;
         var exponent;
         var size;

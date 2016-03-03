@@ -3,9 +3,10 @@ var test = require('tape');
 var shortNumber = require('./');
 
 test('positive tests', function(t) {
-    t.plan(10);
+    t.plan(11);
 
     t.equal(shortNumber(231), 231);
+    t.equal(shortNumber(1000), '1K');
     t.equal(shortNumber(5432), '5.4K');
     t.equal(shortNumber(35656), '35.7K');
     t.equal(shortNumber(1236903), '1.2M');
@@ -18,9 +19,10 @@ test('positive tests', function(t) {
 });
 
 test('negative tests', function(t) {
-    t.plan(10);
+    t.plan(11);
 
     t.equal(shortNumber(-231), -231);
+    t.equal(shortNumber(-1000), '-1K');
     t.equal(shortNumber(-5432), '-5.4K');
     t.equal(shortNumber(-35656), '-35.7K');
     t.equal(shortNumber(-1236903), '-1.2M');
