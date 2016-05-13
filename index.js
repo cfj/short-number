@@ -22,14 +22,6 @@
             return num;
         }
 
-        if (num == 1000) {
-            return 1 + 'K';
-        }
-
-        if (num == -1000) {
-            return -1 + 'K';
-        } 
-
         var shortNumber;
         var exponent;
         var size;
@@ -42,7 +34,7 @@
         };
 
         num = Math.abs(num);
-        size = Math.floor(Math.log(num) / Math.log(10)) + 1;
+        size = num.toString().length;
 
         exponent = size % 3 === 0 ? size - 3 : size - (size % 3);
         shortNumber = Math.round(10 * (num / Math.pow(10, exponent))) / 10;
