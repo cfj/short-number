@@ -34,14 +34,7 @@
         };
 
         num = Math.abs(num);
-        size = num.toString().length;
-        
-        //Decimal Support//
-        if(num % 1 != 0){
-            a = num.toString().split(".");
-            x = a[1].split("").length + 1;
-            size -= x;
-        } 
+        size = Math.floor(num).toString().length;
 
         exponent = size % 3 === 0 ? size - 3 : size - (size % 3);
         shortNumber = Math.round(10 * (num / Math.pow(10, exponent))) / 10;
