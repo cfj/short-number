@@ -3,13 +3,16 @@ var test = require('tape');
 var shortNumber = require('./');
 
 test('positive tests', function(t) {
-    t.plan(14);
+    t.plan(17);
 
     t.equal(shortNumber(231), 231);
+    t.equal(shortNumber(231.6), 231.6);
     t.equal(shortNumber(1000), '1K');
     t.equal(shortNumber(5432), '5.4K');
+    t.equal(shortNumber(5432.8567), '5.4K');
     t.equal(shortNumber(35656), '35.7K');
     t.equal(shortNumber(1000000), '1M');
+    t.equal(shortNumber(1000000.89), '1M');
     t.equal(shortNumber(1236903), '1.2M');
     t.equal(shortNumber(49653234), '49.7M');
     t.equal(shortNumber(984938293), '984.9M');
@@ -22,13 +25,16 @@ test('positive tests', function(t) {
 });
 
 test('negative tests', function(t) {
-    t.plan(14);
+    t.plan(17);
 
     t.equal(shortNumber(-231), -231);
+    t.equal(shortNumber(-231.6), -231.6);
     t.equal(shortNumber(-1000), '-1K');
     t.equal(shortNumber(-5432), '-5.4K');
+    t.equal(shortNumber(-5432.8567), '-5.4K');
     t.equal(shortNumber(-35656), '-35.7K');
     t.equal(shortNumber(-1000000), '-1M');
+    t.equal(shortNumber(-1000000.89), '-1M');
     t.equal(shortNumber(-1236903), '-1.2M');
     t.equal(shortNumber(-49653234), '-49.7M');
     t.equal(shortNumber(-984938293), '-984.9M');
