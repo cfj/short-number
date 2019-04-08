@@ -1,51 +1,24 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    global.shortNumber = factory();
+    global.shortNumber = factory()
 }(this, function (num) {
-    'use strict';
+    'use strict'
 
-    return function (num) {
-        if(typeof num !== 'number') {
-            throw new TypeError('Expected a number');
-        }
+    return num => {
+        if(typeof num !== 'number') throw new TypeError('Expected a number')
+        if(num >= 1e15) throw new RangeError('Input expected to be < 1e15')
+        if(num <= -1e15) throw new RangeError('Input expected to be > -1e15')
 
-        if(num > 1e19) {
-            throw new RangeError('Input expected to be < 1e19');
-        }
+        if(Math.abs(num) < 1000) return num
 
-        if(num < -1e19) {
-            throw new RangeError('Input expected to be > 1e19');
-        }
+        let size = (Math.floor(num) + '').length
+        let suffix
+        if(size < 16) suffix = 'T'
+        if(size < 13) suffix = 'B'
+        if(size < 10) suffix = 'M'
+        if(size < 7) suffix  = 'K'
 
-        if(Math.abs(num) < 1000) {
-            return num;
-        }
-
-        var shortNumber;
-        var exponent;
-        var size;
-        var sign = num < 0 ? '-' : '';
-        var suffixes = {
-            'K': 6,
-            'M': 9,
-            'B': 12,
-            'T': 16
-        };
-
-        num = Math.abs(num);
-        size = Math.floor(num).toString().length;
-
-        exponent = size % 3 === 0 ? size - 3 : size - (size % 3);
-        shortNumber = Math.round(10 * (num / Math.pow(10, exponent))) / 10;
-
-        for(var suffix in suffixes) {
-            if(exponent < suffixes[suffix]) {
-                shortNumber += suffix;
-                break;
-            }
-        }
-
-        return sign + shortNumber;
-    };
-}));
+        return Math.round(10 * (num / Math.pow(10, size % 3 == 0 ? size - 3 : size - (size % 3)))) / 10 + suffix
+    }
+}))
