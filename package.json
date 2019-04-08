@@ -1,6 +1,6 @@
 {
   "name": "short-number",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Turn a long number into a short one to improve readability, like 23634 => 23.6K",
   "repository": {
     "type": "git",
