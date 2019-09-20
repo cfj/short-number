@@ -15,7 +15,7 @@
         }
 
         if(num < -1e19) {
-            throw new RangeError('Input expected to be > 1e19');
+            throw new RangeError('Input expected to be > -1e19');
         }
 
         if(Math.abs(num) < 1000) {
